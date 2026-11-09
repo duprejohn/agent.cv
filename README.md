@@ -1,13 +1,13 @@
 # agent.cv
 
-*Your CV's agent: a job search agency with one client (you), run on Claude. Built and tested with Claude Opus 5.5.*
+*A job search agency with one client (you). Runs on Claude. Configured and tested with Claude Opus 5.5.*
 
 This folder turns Claude into your own recruiter and account team. It
 sources roles, screens them honestly, tailors ATS-safe resumes and cover letters, preps you for interviews, and keeps
 every lead on a pipeline and dashboard. You make every decision and press every Submit button.
 
-It started as John DuPre's personal setup during his own 2026 job search and grew into a system over a few months of
-real use. This is that system with the personal data taken out, shared so other job seekers can skip the trial and error.
+This started as my personal setup during my 2026 job search and grew into a system over several months of
+real use. This is the same system with all personal data and context removed, shared for other job seekers to try.
 
 > Built with Claude. Not affiliated with or endorsed by Anthropic.
 
