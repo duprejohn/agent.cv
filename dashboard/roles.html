@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Search Desk · Roles</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1 id="desk-title">Search Desk</h1>
+      <p class="sub" id="desk-sub"></p>
+      <nav class="tabs" aria-label="Dashboard pages"><a href="index.html">Overview</a><a href="roles.html" id="nav-roles" aria-current="page">Roles</a><a href="network.html" id="nav-network">Network</a><a href="resume.html">Resume</a><a href="bio.html">Bio</a></nav>
+    </div>
+    <div class="stamp" id="stamp"></div>
+  </header>
+
+  <section aria-labelledby="h-roles">
+    <h2 id="h-roles">Full-time opportunities</h2>
+    <div class="filters" id="filters" role="group" aria-label="Filter roles"></div>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Employer / role</th><th>Stage</th><th>Fit</th><th>Pay</th><th>Where</th><th>Next</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-contract">
+    <h2 id="h-contract">Contract &amp; consulting</h2>
+    <p class="sub">Part-time and contract work (10–20 hrs/week) alongside the full-time search.</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Client / role</th><th>Stage</th><th>Fit</th><th>Rate</th><th>Where</th><th>Next</th></tr></thead>
+        <tbody id="crows"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>Source of truth: <code>pipeline.csv</code>, <code>agencies.csv</code> and <code>outreach.csv</code> in this folder. Rebuilt with <code>scripts/build_dashboard.py</code> after each session.</footer>
+</div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

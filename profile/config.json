@@ -1,0 +1,12 @@
+{
+  "desk_title": "Search Desk",
+  "desk_subtitle": "",
+  "pay_floor_k": 0,
+  "recent_employers": 0,
+  "search": {
+    "title": "",
+    "exclude": "\\bintern\\b",
+    "location": "remote|united states|anywhere|hybrid|^$",
+    "workday_terms": []
+  }
+}

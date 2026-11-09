@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Search Desk · Network</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1 id="desk-title">Search Desk</h1>
+      <p class="sub" id="desk-sub"></p>
+      <nav class="tabs" aria-label="Dashboard pages"><a href="index.html">Overview</a><a href="roles.html" id="nav-roles">Roles</a><a href="network.html" id="nav-network" aria-current="page">Network</a><a href="resume.html">Resume</a><a href="bio.html">Bio</a></nav>
+    </div>
+    <div class="stamp" id="stamp"></div>
+  </header>
+
+  <section aria-labelledby="h-ag">
+    <h2 id="h-ag">Agencies</h2>
+    <p class="sub" id="agsum">Recruiting, staffing and fractional networks to get onto. Playbook: companies/agencies.md.</p>
+    <div class="agprog" id="agprog" role="group" aria-label="Agency outreach progress"></div>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Agency</th><th>Type</th><th>Priority</th><th>Stage</th><th>How to get on the roster</th></tr></thead>
+        <tbody id="agrows"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-out">
+    <h2 id="h-out">Outreach</h2>
+    <p class="sub">Network, referral and consulting messages not tied to a posting.</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Person / org</th><th>Purpose</th><th>Stage</th><th>Sent</th><th>Next</th></tr></thead>
+        <tbody id="orows"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>Source of truth: <code>pipeline.csv</code>, <code>agencies.csv</code> and <code>outreach.csv</code> in this folder. Rebuilt with <code>scripts/build_dashboard.py</code> after each session.</footer>
+</div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

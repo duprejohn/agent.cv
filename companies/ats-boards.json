@@ -1,0 +1,7 @@
+{
+ "note": "Job boards scripts/sweep.py scans. Claude builds this list from profile/targets.md during setup (and adds to it as you find employers). Greenhouse, Lever and Ashby boards: {\"ats\": \"greenhouse|lever|ashby\", \"slug\": \"<name from the careers URL, e.g. job-boards.greenhouse.io/<slug>>\"}. Workday: {\"company\": \"...\", \"tenant\": \"<tenant>\", \"wd\": \"wd1|wd3|wd5\", \"site\": \"<site>\"} from <tenant>.<wd>.myworkdayjobs.com/<site>.",
+ "industries": {
+  "example industry (rename me)": []
+ },
+ "workday": []
+}

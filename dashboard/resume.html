@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Search Desk · Resume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1 id="desk-title">Search Desk</h1>
+      <p class="sub" id="desk-sub"></p>
+      <nav class="tabs" aria-label="Dashboard pages"><a href="index.html">Overview</a><a href="roles.html" id="nav-roles">Roles</a><a href="network.html" id="nav-network">Network</a><a href="resume.html" aria-current="page">Resume</a><a href="bio.html">Bio</a></nav>
+    </div>
+    <div class="stamp" id="stamp"></div>
+  </header>
+
+  <section aria-labelledby="h-res">
+    <h2 id="h-res">Master resume</h2>
+    <p class="sub" id="resume-meta"></p>
+    <div class="filters"><button type="button" class="copy" data-copy="resume-plain">Copy as plain text</button></div>
+    <article class="doc" id="resume-doc"></article>
+  </section>
+
+  <footer>Source of truth: <code>pipeline.csv</code>, <code>agencies.csv</code> and <code>outreach.csv</code> in this folder. Rebuilt with <code>scripts/build_dashboard.py</code> after each session.</footer>
+</div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

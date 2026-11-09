@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Search Desk · Bio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1 id="desk-title">Search Desk</h1>
+      <p class="sub" id="desk-sub"></p>
+      <nav class="tabs" aria-label="Dashboard pages"><a href="index.html">Overview</a><a href="roles.html" id="nav-roles">Roles</a><a href="network.html" id="nav-network">Network</a><a href="resume.html">Resume</a><a href="bio.html" aria-current="page">Bio</a></nav>
+    </div>
+    <div class="stamp" id="stamp"></div>
+  </header>
+
+  <section aria-labelledby="h-bio">
+    <h2 id="h-bio">Bios</h2>
+    <p class="sub">Every bio in use, pulled from the source files. Edit the source file (shown under each one), not this page.</p>
+    <div class="cards" id="bios"></div>
+  </section>
+
+  <section aria-labelledby="h-intake">
+    <h2 id="h-intake">Intake answers</h2>
+    <p class="sub">Reusable answers for agency and recruiter forms.</p>
+    <div class="cards" id="intake"></div>
+  </section>
+
+  <footer>Source of truth: <code>pipeline.csv</code>, <code>agencies.csv</code> and <code>outreach.csv</code> in this folder. Rebuilt with <code>scripts/build_dashboard.py</code> after each session.</footer>
+</div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

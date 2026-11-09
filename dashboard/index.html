@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Search Desk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1 id="desk-title">Search Desk</h1>
+      <p class="sub" id="desk-sub"></p>
+      <nav class="tabs" aria-label="Dashboard pages"><a href="index.html" aria-current="page">Overview</a><a href="roles.html" id="nav-roles">Roles</a><a href="network.html" id="nav-network">Network</a><a href="resume.html">Resume</a><a href="bio.html">Bio</a></nav>
+    </div>
+    <div class="stamp" id="stamp"></div>
+  </header>
+
+  <section aria-labelledby="h-funnel">
+    <h2 id="h-funnel">Pipeline</h2>
+    <div class="funnel" id="funnel"></div>
+  </section>
+
+  <section aria-labelledby="h-flow">
+    <h2 id="h-flow">Funnel flow</h2>
+    <div class="flowwrap"><svg id="flow" viewBox="0 0 1000 300" role="img" aria-labelledby="flow-desc"><desc id="flow-desc"></desc></svg></div>
+    <div class="flowkey"><span><i style="background:var(--good)"></i>Moving forward</span><span><i style="background:var(--idle)"></i>Closed, held or waiting</span><span><i style="background:var(--bad)"></i>Rejected</span></div>
+  </section>
+
+  <section aria-labelledby="h-hot">
+    <h2 id="h-hot">Active conversations</h2>
+    <ul class="hot" id="hot"></ul>
+    <p class="more"><a href="roles.html">All roles →</a></p>
+  </section>
+
+  <section aria-labelledby="h-act">
+    <h2 id="h-act">On deck</h2>
+    <ul class="deck" id="deck"></ul>
+  </section>
+
+  <section aria-labelledby="h-ag">
+    <h2 id="h-ag">Agency outreach</h2>
+    <div class="agprog" id="agprog" role="group" aria-label="Agency outreach progress"></div>
+    <p class="more"><a href="network.html">All agencies and outreach →</a></p>
+  </section>
+
+  <footer>Source of truth: <code>pipeline.csv</code>, <code>agencies.csv</code> and <code>outreach.csv</code> in this folder. Rebuilt with <code>scripts/build_dashboard.py</code> after each session.</footer>
+</div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
