@@ -2,6 +2,18 @@
 
 *Your CV's agent: a job search agency with one client (you), run on Claude. Built and tested with Claude Opus 5.5.*
 
+## Quick start
+1. **Install Claude.** Get the [Claude desktop app](https://claude.com/download) (needs a paid plan), sign in, and
+   switch to **Cowork**.
+2. **Download agent.cv.** Open the [latest release](https://github.com/duprejohn/agent.cv/releases/latest), click
+   **Source code (zip)**, and unzip it. In Cowork, choose that folder to work in.
+3. **Paste this prompt into Claude:**
+
+> You're my job search agency, and I'm your only client. Read CLAUDE.md in this folder: it's your operating manual. This is our first session, so start setup at Phase 1. Read my LinkedIn PDF and resume in profile/materials/, then interview me a few questions at a time. Coach me to a strong master resume, help me update LinkedIn to match it, and then ask me what jobs and industries I want to target. Don't send, submit or post anything without my explicit OK.
+
+That's it. Claude takes it from there. *Tip:* save your LinkedIn profile as a PDF (**More → Save to PDF**) into the
+folder's `profile/materials/` first. Need more detail? See the [full setup guide](#full-setup-guide).
+
 This folder turns Claude into your own recruiter and account team. It
 sources roles, screens them honestly, tailors ATS-safe resumes and cover letters, preps you for interviews, and keeps
 every lead on a pipeline and dashboard. You make every decision and press every Submit button.
@@ -45,7 +57,7 @@ real use. This is that system with the personal data taken out, shared so other 
 | `scripts/do_not_submit.py` | A recruiter-ready list of roles you've already applied to, so agencies don't double-submit you |
 | `scripts/build_dashboard.py` | Refreshes the dashboard data |
 
-## Quick start
+## Full setup guide
 
 ### 1. Set up Claude Cowork
 Cowork is the mode of the Claude desktop app that can work with files on your computer.
