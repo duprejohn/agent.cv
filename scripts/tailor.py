@@ -15,9 +15,9 @@ Spec keys (all optional except headline/summary/skills):
   replace    [[old, new, reason?]]   text substitutions applied to every bullet (keyword mirroring; must stay truthful)
   why        {key: reason}  reasoning shown in changelog.md (see changelog() for the keys)
   early      "condensed" (default) | "full"   how to render older employers (past the first `recent_employers`
-             in profile/config.json): condensed uses the master's "## Early Career" section instead
+             in profile/config.json): condensed uses the primary resume's "## Early Career" section instead
   awards     bool (default true)
-Every bullet still comes from the master resume, so tailoring rewords and reorders but never invents.
+Every bullet still comes from the primary resume, so tailoring rewords and reorders but never invents.
 """
 import datetime, json, re, subprocess, sys, pathlib
 
@@ -127,7 +127,7 @@ def tailor(spec, events=None):
 
 
 def changelog(spec, folder):
-    """Before / After / Reasoning table of every change from the master resume, for review before anything is sent.
+    """Before / After / Reasoning table of every change from the primary resume, for review before anything is sent.
     Reasons come from spec["why"] (keys: tagline, headline, summary, skills, projects, awards, early, order:<role key>,
     limit:<role key>, drop:<substring>, replace:<old text>) or a third element in a replace entry."""
     header, sec = parse_master()
@@ -164,9 +164,9 @@ def changelog(spec, folder):
         add("Early roles", "Full entries: " + ", ".join(early), "Condensed to one line per employer",
             why.get("early") or "Standard: older roles condensed so recent, relevant experience leads and the resume stays at 2 pages.")
     if sec.get("Projects") and not spec.get("projects"):
-        add("Projects section", "Included in master", "(removed)", why.get("projects"))
+        add("Projects section", "Included in primary resume", "(removed)", why.get("projects"))
     if sec.get("Awards") and not spec.get("awards", True):
-        add("Awards section", "Included in master", "(removed)", why.get("awards"))
+        add("Awards section", "Included in primary resume", "(removed)", why.get("awards"))
     m_skills = [l for l in sec.get("Skills", []) if l.strip()]
     if spec["skills"] != m_skills:
         add("Skills", "\n".join(m_skills), "\n".join(spec["skills"]), why.get("skills"))
@@ -181,7 +181,7 @@ def changelog(spec, folder):
         sent = [l for l in built.read_text(encoding="utf-8").splitlines() if not l.startswith("<!--")]
         drift = sum(1 for a, b in zip(sent, tailor(spec).splitlines()) if a != b) + abs(len(sent) - len(tailor(spec).splitlines()))
         if drift:
-            out += [f"> **Note:** the master resume has changed since resume.md was built ({drift} lines differ). "
+            out += [f"> **Note:** the primary resume has changed since resume.md was built ({drift} lines differ). "
                     "This table shows the changes as the spec would apply them today; check resume.md for the exact text that was sent.", ""]
     out += ["| Before | After | Reasoning |", "|---|---|---|"] + [f"| {a} | {b} | {c} |" for a, b, c in rows]
     (folder / "changelog.md").write_text("\n".join(out) + "\n", encoding="utf-8")

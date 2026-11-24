@@ -4,7 +4,7 @@ Usage: python3 scripts/workday_resume.py <applications/.../spec.json>
 Writes resume-workday.md/.docx/.pdf next to the spec. Same facts and bullets as resume.md; only the structure changes:
 - every position is its own block: title line (no commas or dashes), then employer alone, then "Mon YYYY – Mon YYYY" (no pipes),
   so stacked promotions at one employer parse as separate jobs instead of one merged entry
-- early roles are listed separately (from the master) instead of condensed "Title A; Title B" lines
+- early roles are listed separately (from the primary resume) instead of condensed "Title A; Title B" lines
 - the bold headline and the tagline are dropped (parsers read them as a current job title)
 - "Experience" becomes "Work Experience". Projects stay their own section (never a job): undated, each bullet
   prefixed with its project name, so the parser has no "title | place | dates" heading to turn into a position."""

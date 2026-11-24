@@ -84,7 +84,7 @@ flow = {
 }
 
 
-# Profile pages: master resume + bios (read straight from the source files, so the pages always match them)
+# Profile pages: primary resume + bios (read straight from the source files, so the pages always match them)
 def md_sections(path, level="## "):
     out, cur, buf = [], None, []
     for line in (root / path).read_text(encoding="utf-8").splitlines():

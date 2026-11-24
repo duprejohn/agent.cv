@@ -7,7 +7,7 @@ DEFAULTS = {
     "desk_subtitle": "",                  # one line under it: target roles, location, pay floor
     "pay_floor_k": 0,                     # dashboard flags roles whose listed pay range starts below this ($K); 0 = off
     "recent_employers": 0,                # resumes show this many most-recent employers in full; older ones use the
-                                          # master's "## Early Career" section when early="condensed". 0 = show all in full
+                                          # primary resume's "## Early Career" section when early="condensed". 0 = show all in full
     "search": {                           # scripts/sweep.py filters (Python regular expressions, case-insensitive).
         "title": "",                      # filled in from profile/targets.md during setup, e.g. "account (manager|director)|customer success"
         "exclude": r"\bintern\b",        # titles to skip

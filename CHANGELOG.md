@@ -22,9 +22,11 @@ Before publishing: bump `VERSION`, add the entry here, run `python3 scripts/upda
   podcast to listen to on a walk.
 - **New script: `scripts/doc_pdf.py`** makes readable PDFs of prep sheets and study guides (tables, lists, quotes) on
   Mac, Windows and Linux.
-- **Fact corrections:** when you correct a claim, Claude fixes it in the profile, the master resume, every unsent kit
+- **Fact corrections:** when you correct a claim, Claude fixes it in the profile, the primary resume, every unsent kit
   and open prep sheets, and lists what already went out with the old wording.
 - **Workday:** autofill often fails outright; plan to enter each job by hand from `experience-paste.txt`.
+- **"Primary resume":** the docs, dashboard and scripts now call `profile/master-resume.md` your primary resume. The
+  file name is unchanged, so nothing to move.
 - Answer bank: added "Aren't you overqualified?" and a question to ask every interviewer.
 
 ### Known issues

@@ -21,9 +21,9 @@ one stopped. Go one phase at a time, and get the user's OK before moving on.
    customers or volume, the numbers behind each win (before → after), tools, certifications, and anything to handle with
    care (a gap, a layoff, a career change, a short stint). Never fill a gap with a guess; mark it `CONFIRM` and ask.
 
-### Phase 2: Coach the master resume
+### Phase 2: Coach the primary resume
 1. Build `profile/master-resume.md` from the profile, following the Resume standards below (ATS-safe, one column,
-   standard headings, `Mon YYYY` dates). The master holds **every** true bullet; tailored versions choose from it.
+   standard headings, `Mon YYYY` dates). The primary resume holds **every** true bullet; tailored versions choose from it.
 2. Coach, don't just write. For each role, show the user the bullets and say plainly which are weak and why
    (no result, no number, vague verb, duty instead of accomplishment). Suggest a stronger version, ask for the missing
    fact, and use only what the user confirms.
@@ -31,7 +31,7 @@ one stopped. Go one phase at a time, and get the user's OK before moving on.
 4. Build it (`python3 scripts/build_docx.py profile/master-resume.md` and `python3 scripts/make_pdf.py profile/master-resume.md`),
    check it's 2 pages or less, and have the user read the PDF. Fill in `profile/application-answers.md` from it.
 
-### Phase 3: Update LinkedIn from the master resume
+### Phase 3: Update LinkedIn from the primary resume
 1. Write `profile/linkedin-update.md`, a copy/paste sheet: headline (220 characters max), About (2,600 max; first 2–3
    lines matter most), each Experience entry with the same titles and dates as the resume, top skills to pin, Featured
    ideas, a custom URL, and Open to Work settings (recruiters only, with target titles and locations).
@@ -68,7 +68,7 @@ one stopped. Go one phase at a time, and get the user's OK before moving on.
 - **Every claim comes from the profile.** Tailored materials only reword or reorder real experience from `profile/`.
   If something is missing, ask the user. Never invent a metric, title, degree, tool or date.
 - **When a fact is corrected, fix it everywhere.** If the user corrects a claim (a metric's meaning, a feature that never
-  shipped, a date), update the profile and master resume, rebuild every unsent kit, and update open prep sheets. Then
+  shipped, a date), update the profile and primary resume, rebuild every unsent kit, and update open prep sheets. Then
   list any materials already sent with the old wording, so the user can correct it in the room if it comes up.
 - **Keep the record current.** After any change, update `pipeline.csv` and add a line to `log.md` (newest first).
 - **Save the user's standing rules in `profile/house-rules.md`**, never in this file. When the user sets a lasting
@@ -94,7 +94,7 @@ one stopped. Go one phase at a time, and get the user's OK before moving on.
   skills, bullet order, truthful keyword swaps), then run `python3 scripts/tailor.py <that spec.json>`. It pulls every
   bullet from `profile/master-resume.md` and builds the .docx and PDF.
 - **Changelog for every tailored resume:** tailor.py also writes `changelog.md`, a 3-column table (Before | After | Reasoning)
-  of every change from the master: tagline, headline, summary, bullet order, removed bullets, keyword swaps, condensed roles,
+  of every change from the primary resume: tagline, headline, summary, bullet order, removed bullets, keyword swaps, condensed roles,
   skills. Write the reasoning into spec.json under `why` (or as the third element of a `replace` entry) while building the spec;
   a row without one shows **NEEDS A REASON**. Ship every kit with zero missing reasons, and have the user review the
   changelog before sending. `--changelog-only` writes it without rebuilding the resume.
@@ -238,9 +238,9 @@ private page: publish `dashboard/index.html` with the other files in `dashboard/
 |---|---|
 | `profile/candidate-profile.md` | Master profile: experience, quantified wins, skills, stories, official titles |
 | `profile/targets.md` | What we're hunting for: roles, level, pay, location, must-haves, deal-breakers |
-| `profile/master-resume.md` | The master resume every tailored version is built from |
+| `profile/master-resume.md` | The primary resume every tailored version is built from |
 | `profile/application-answers.md` | Copy/paste cheat sheet for application forms |
-| `profile/linkedin-update.md` | LinkedIn copy built from the master resume (headline, About, experience, skills) |
+| `profile/linkedin-update.md` | LinkedIn copy built from the primary resume (headline, About, experience, skills) |
 | `profile/config.json` | Script settings: dashboard title, pay floor, sweep filters, how many employers to show in full |
 | `profile/materials/` | Source resume, LinkedIn export, old cover letters |
 | `pipeline.csv` | One row per opportunity; the source of truth for status. `track` = `full-time` or `contract` |

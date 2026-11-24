@@ -9,7 +9,7 @@
    unzip it. In Cowork, choose the `agent.cv` folder to work in.
 3. **Paste this prompt into Claude:**
 
-> You're my job search agency, and I'm your only client. Read CLAUDE.md in this folder: it's your operating manual. This is our first session, so start setup at Phase 1. Read my LinkedIn PDF and resume in profile/materials/, then interview me a few questions at a time. Coach me to a strong master resume, help me update LinkedIn to match it, and then ask me what jobs and industries I want to target. Don't send, submit or post anything without my explicit OK.
+> You're my job search agency, and I'm your only client. Read CLAUDE.md in this folder: it's your operating manual. This is our first session, so start setup at Phase 1. Read my LinkedIn PDF and resume in profile/materials/, then interview me a few questions at a time. Coach me to a strong primary resume, help me update LinkedIn to match it, and then ask me what jobs and industries I want to target. Don't send, submit or post anything without my explicit OK.
 
 That's it. Claude takes it from there. *Tip:* save your LinkedIn profile as a PDF (**More → Save to PDF**) into the
 folder's `profile/materials/` first. Need more detail? See the [full setup guide](#full-setup-guide).
@@ -43,12 +43,12 @@ real use. This is that system with the personal data taken out, shared so other 
   - **Roles:** every opportunity in filterable tables, with fit score, pay, location, next step and due date; contract
     work in its own section.
   - **Network:** agencies and outreach, by stage.
-  - **Resume and Bio:** your master resume and every bio, rendered with copy buttons for forms.
+  - **Resume and Bio:** your primary resume and every bio, rendered with copy buttons for forms.
 - **Scripts** do the repetitive work (Python 3, standard library only):
 
 | Script | What it does |
 |---|---|
-| `scripts/tailor.py <spec.json>` | Builds a tailored resume (.md, .docx, .pdf) from your master resume and a small JSON spec: headline, summary, skills, bullet order, truthful keyword swaps. Also writes a changelog (Before / After / Reasoning) so you can review every change before you send it |
+| `scripts/tailor.py <spec.json>` | Builds a tailored resume (.md, .docx, .pdf) from your primary resume and a small JSON spec: headline, summary, skills, bullet order, truthful keyword swaps. Also writes a changelog (Before / After / Reasoning) so you can review every change before you send it |
 | `scripts/build_docx.py <file.md>` | ATS-friendly Word file: single column, real bullets, no tables or text boxes |
 | `scripts/make_pdf.py <file.md>` | Matching PDF on Mac, Windows or Linux |
 | `scripts/doc_pdf.py <file.md>` | Readable PDF of a prep sheet or study guide (tables, lists, quotes) on Mac, Windows or Linux |
@@ -89,11 +89,11 @@ the current version.
 ### 4. Paste the starter prompt
 Copy this into Cowork and send it (it's also in [`STARTER-PROMPT.md`](STARTER-PROMPT.md)):
 
-> You're my job search agency, and I'm your only client. Read CLAUDE.md in this folder: it's your operating manual. This is our first session, so start setup at Phase 1. Read my LinkedIn PDF and resume in profile/materials/, then interview me a few questions at a time. Coach me to a strong master resume, help me update LinkedIn to match it, and then ask me what jobs and industries I want to target. Don't send, submit or post anything without my explicit OK.
+> You're my job search agency, and I'm your only client. Read CLAUDE.md in this folder: it's your operating manual. This is our first session, so start setup at Phase 1. Read my LinkedIn PDF and resume in profile/materials/, then interview me a few questions at a time. Coach me to a strong primary resume, help me update LinkedIn to match it, and then ask me what jobs and industries I want to target. Don't send, submit or post anything without my explicit OK.
 
 Setup runs in four phases over one to three sessions:
 1. **Intake:** Claude reads your LinkedIn and resume, then asks about the gaps (numbers, scope, team size).
-2. **Master resume:** Claude coaches you bullet by bullet to an ATS-safe resume, using only facts you confirm.
+2. **Primary resume:** Claude coaches you bullet by bullet to an ATS-safe resume, using only facts you confirm.
 3. **LinkedIn:** Claude writes matching LinkedIn copy (headline, About, experience, skills) for you to paste in.
 4. **Targets:** Claude asks what roles, industries, pay and location you want, then builds your job board list and
    runs the first search.
@@ -150,7 +150,7 @@ resumes, PDFs and dashboard data, but your profile and pipeline files are still 
 ```
 CLAUDE.md               operating manual (Claude reads this first)
 STARTER-PROMPT.md       paste this into your first session
-profile/                who you are: profile, targets, master resume, form answers, config
+profile/                who you are: profile, targets, primary resume, form answers, config
 pipeline.csv            every opportunity and its stage
 roles/ companies/       research on openings and employers; job board list; agency playbook
 applications/           1-upcoming/<platform>/  →  2-submitted/<date>/  →  3-archive/

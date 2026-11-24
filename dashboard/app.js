@@ -130,7 +130,7 @@ if ($("flow") && D.flow && D.flow.found) {
 }
 
 
-// Resume page: render the master resume markdown as a document
+// Resume page: render the primary resume markdown as a document
 const inline = t => esc(t).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
 const plainResume = md => md.split("\n").map(l => l.startsWith("# ") ? l.slice(2).replace(" | ", "\n")
   : l.startsWith("#### ") ? l.slice(5) : l.startsWith("### ") ? "\n" + l.slice(4) : l.startsWith("## ") ? "\n" + l.slice(3).toUpperCase() : l.replace(/\*\*/g, ""))
