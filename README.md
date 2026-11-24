@@ -5,8 +5,8 @@
 ## Quick start
 1. **Install Claude.** Get the [Claude desktop app](https://claude.com/download) (needs a paid plan), sign in, and
    switch to **Cowork**.
-2. **Download agent.cv.** Open the [latest release](https://github.com/duprejohn/agent.cv/releases/latest), click
-   **Source code (zip)**, and unzip it. In Cowork, choose that folder to work in.
+2. **[Download agent.cv (zip)](https://github.com/duprejohn/agent.cv/releases/latest/download/agent.cv.zip)** and
+   unzip it. In Cowork, choose the `agent.cv` folder to work in.
 3. **Paste this prompt into Claude:**
 
 > You're my job search agency, and I'm your only client. Read CLAUDE.md in this folder: it's your operating manual. This is our first session, so start setup at Phase 1. Read my LinkedIn PDF and resume in profile/materials/, then interview me a few questions at a time. Coach me to a strong master resume, help me update LinkedIn to match it, and then ask me what jobs and industries I want to target. Don't send, submit or post anything without my explicit OK.
@@ -72,10 +72,10 @@ The app's layout changes from time to time. If a step doesn't match what you see
 the current version.
 
 ### 2. Get your copy of agent.cv
-1. Go to the [latest release](https://github.com/duprejohn/agent.cv/releases/latest) and, under **Assets**, click
-   **Source code (zip)**. Unzip it.
-2. The folder is named with the version (like `agent.cv-0.9.1`). Rename it to `agent.cv` and put it somewhere private,
-   like your Documents folder. (Updates come through Claude later, so you only download once.)
+1. **[Download agent.cv (zip)](https://github.com/duprejohn/agent.cv/releases/latest/download/agent.cv.zip)**: it's
+   always the latest release. Unzip it.
+2. Put the `agent.cv` folder somewhere private, like your Documents folder. (Updates come through Claude later, so you
+   only download once.)
 3. **Add your LinkedIn profile:** on your LinkedIn profile page, click **More → Save to PDF**. Put that PDF, and any
    current resume, in `agent.cv/profile/materials/`.
 
@@ -138,7 +138,8 @@ Your own rules ("always…", "never…") live in `profile/house-rules.md`, so up
 
 **For maintainers:** bump `VERSION`, add a `CHANGELOG.md` entry (with "Steps for existing users" if data changes), run
 `python3 scripts/update.py manifest`, then push and publish a GitHub release tagged `v<version>` with the changelog
-entry as its notes (the Quick start links to the latest release).
+entry as its notes. Attach `agent.cv.zip` (`git archive --format=zip --prefix=agent.cv/ -o agent.cv.zip HEAD`):
+the README's download link always points to that file on the latest release.
 
 ## Privacy
 Your copy will hold your work history, salary targets and notes on every employer. **Keep it private.** Don't push your
