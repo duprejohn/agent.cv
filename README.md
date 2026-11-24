@@ -60,9 +60,10 @@ The app's layout changes from time to time. If a step doesn't match what you see
 the current version.
 
 ### 2. Get your copy of agent.cv
-1. Click the green **Code** button at the top of this page, then **Download ZIP**, and unzip it.
-   (GitHub users: **Use this template** makes your own copy of the repo. Make it **private**, then clone it.)
-2. Put the `agent.cv` folder somewhere private, like your Documents folder.
+1. Go to the [latest release](https://github.com/duprejohn/agent.cv/releases/latest) and, under **Assets**, click
+   **Source code (zip)**. Unzip it.
+2. The folder is named with the version (like `agent.cv-0.9.1`). Rename it to `agent.cv` and put it somewhere private,
+   like your Documents folder. (Updates come through Claude later, so you only download once.)
 3. **Add your LinkedIn profile:** on your LinkedIn profile page, click **More → Save to PDF**. Put that PDF, and any
    current resume, in `agent.cv/profile/materials/`.
 
@@ -124,7 +125,8 @@ agent.cv improves over time. To get the latest version, tell Claude **"update ag
 Your own rules ("always…", "never…") live in `profile/house-rules.md`, so updates never overwrite them.
 
 **For maintainers:** bump `VERSION`, add a `CHANGELOG.md` entry (with "Steps for existing users" if data changes), run
-`python3 scripts/update.py manifest`, then push.
+`python3 scripts/update.py manifest`, then push and publish a GitHub release tagged `v<version>` with the changelog
+entry as its notes (the Quick start links to the latest release).
 
 ## Privacy
 Your copy will hold your work history, salary targets and notes on every employer. **Keep it private.** Don't push your
