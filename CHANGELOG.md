@@ -6,6 +6,17 @@ Each release lists what changed and any steps for existing users. To update your
 "Steps for existing users" (data changes Claude should make, like adding a column to pipeline.csv).
 Before publishing: bump `VERSION`, add the entry here, run `python3 scripts/update.py manifest`, then push.
 
+## 0.9.2 (2026-11-24)
+### What's new
+- **`profile/master-resume.md` is now `profile/primary-resume.md`.** The docs already called it your primary resume;
+  now the file name matches. Scripts and the dashboard look for the new name and still find the old one, so nothing
+  breaks if you haven't renamed yet.
+- Release downloads are versioned: `agent.cv-<version>.zip` on each GitHub release.
+
+### Steps for existing users
+- Ask Claude to rename `profile/master-resume.md` (and any `.docx`/`.pdf` built from it) to `primary-resume.*`, and to
+  update any of your own notes that mention the old path.
+
 ## 0.9.1 (2026-11-24)
 ### What's new
 - **Interview coaching, rebuilt from a real multi-round loop.** Prep sheets now have a set shape: what the

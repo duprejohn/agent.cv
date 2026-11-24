@@ -108,7 +108,9 @@ for k, v in cons.items():
 intake = []
 for k, v in (md_sections("profile/agency-intake-answers.md", "**") if (root / "profile/agency-intake-answers.md").exists() else []):
     intake.append({"title": k, "src": "profile/agency-intake-answers.md", "text": unwrap(v)})
-mr = root / "profile/master-resume.md"
+mr = root / "profile/primary-resume.md"
+if not mr.exists() and (root / "profile/master-resume.md").exists():  # copies from before 0.9.2
+    mr = root / "profile/master-resume.md"
 resume = {"md": re.sub(r"<!--.*?-->", "", mr.read_text(encoding="utf-8"), flags=re.S).strip(),
           "updated": datetime.date.fromtimestamp(mr.stat().st_mtime).isoformat()}
 

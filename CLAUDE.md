@@ -22,13 +22,13 @@ one stopped. Go one phase at a time, and get the user's OK before moving on.
    care (a gap, a layoff, a career change, a short stint). Never fill a gap with a guess; mark it `CONFIRM` and ask.
 
 ### Phase 2: Coach the primary resume
-1. Build `profile/master-resume.md` from the profile, following the Resume standards below (ATS-safe, one column,
+1. Build `profile/primary-resume.md` from the profile, following the Resume standards below (ATS-safe, one column,
    standard headings, `Mon YYYY` dates). The primary resume holds **every** true bullet; tailored versions choose from it.
 2. Coach, don't just write. For each role, show the user the bullets and say plainly which are weak and why
    (no result, no number, vague verb, duty instead of accomplishment). Suggest a stronger version, ask for the missing
    fact, and use only what the user confirms.
 3. Agree on the headline, summary and skills groups.
-4. Build it (`python3 scripts/build_docx.py profile/master-resume.md` and `python3 scripts/make_pdf.py profile/master-resume.md`),
+4. Build it (`python3 scripts/build_docx.py profile/primary-resume.md` and `python3 scripts/make_pdf.py profile/primary-resume.md`),
    check it's 2 pages or less, and have the user read the PDF. Fill in `profile/application-answers.md` from it.
 
 ### Phase 3: Update LinkedIn from the primary resume
@@ -92,7 +92,7 @@ one stopped. Go one phase at a time, and get the user's OK before moving on.
   **Check length:** resumes 2 pages, cover letters 1.
 - **Tailored resumes:** write `applications/1-upcoming/<platform>/<id>-<company>-<role>/spec.json` (headline, summary,
   skills, bullet order, truthful keyword swaps), then run `python3 scripts/tailor.py <that spec.json>`. It pulls every
-  bullet from `profile/master-resume.md` and builds the .docx and PDF.
+  bullet from `profile/primary-resume.md` and builds the .docx and PDF.
 - **Changelog for every tailored resume:** tailor.py also writes `changelog.md`, a 3-column table (Before | After | Reasoning)
   of every change from the primary resume: tagline, headline, summary, bullet order, removed bullets, keyword swaps, condensed roles,
   skills. Write the reasoning into spec.json under `why` (or as the third element of a `replace` entry) while building the spec;
@@ -238,7 +238,7 @@ private page: publish `dashboard/index.html` with the other files in `dashboard/
 |---|---|
 | `profile/candidate-profile.md` | Master profile: experience, quantified wins, skills, stories, official titles |
 | `profile/targets.md` | What we're hunting for: roles, level, pay, location, must-haves, deal-breakers |
-| `profile/master-resume.md` | The primary resume every tailored version is built from |
+| `profile/primary-resume.md` | The primary resume every tailored version is built from |
 | `profile/application-answers.md` | Copy/paste cheat sheet for application forms |
 | `profile/linkedin-update.md` | LinkedIn copy built from the primary resume (headline, About, experience, skills) |
 | `profile/config.json` | Script settings: dashboard title, pay floor, sweep filters, how many employers to show in full |

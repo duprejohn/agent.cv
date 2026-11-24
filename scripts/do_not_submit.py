@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Regenerate the do-not-submit list from pipeline.csv.
 Writes companies/do-not-submit.md (internal) and outreach/Do-Not-Submit.{md,html,pdf} (to send to recruiters).
-Your name and contact line come from the first two lines of profile/master-resume.md.
+Your name and contact line come from the first two lines of profile/primary-resume.md.
 Includes every row with a date_applied, plus active processes that came through a recruiter (stage past 'applied' without a date).
 Usage: python3 scripts/do_not_submit.py"""
 import csv, datetime, html, pathlib, re, subprocess, sys
@@ -9,7 +9,7 @@ root = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(root / "scripts"))
 import make_pdf
 rows = list(csv.DictReader(open(root / "pipeline.csv", newline="", encoding="utf-8")))
-head_lines = [l.strip() for l in (root / "profile/master-resume.md").read_text(encoding="utf-8").splitlines() if l.strip() and not l.startswith("<!--")]
+head_lines = [l.strip() for l in (root / "profile/primary-resume.md" if (root / "profile/primary-resume.md").exists() else root / "profile/master-resume.md").read_text(encoding="utf-8").splitlines() if l.strip() and not l.startswith("<!--")]
 NAME = head_lines[0].lstrip("# ").partition(" | ")[0].strip()
 CONTACT = head_lines[1] if len(head_lines) > 1 else ""
 ACTIVE = {"recruiter-screen", "interviewing", "final", "offer"}

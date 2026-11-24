@@ -156,7 +156,7 @@ if ($("resume-doc") && D.resume) {
   $("resume-doc").innerHTML = html;
   COPY["resume-plain"] = plainResume(D.resume.md);
   const bullets = (D.resume.md.match(/^- /gm) || []).length;
-  if ($("resume-meta")) $("resume-meta").textContent = `Source: profile/master-resume.md · last edited ${D.resume.updated} · ${bullets} bullets. This is the full master; tailored resumes pick and reorder from it. Ask Claude to change a line here and every future resume follows.`;
+  if ($("resume-meta")) $("resume-meta").textContent = `Source: profile/primary-resume.md · last edited ${D.resume.updated} · ${bullets} bullets. This is the full primary resume; tailored resumes pick and reorder from it. Ask Claude to change a line here and every future resume follows.`;
 }
 
 // Bio page: cards with counts and copy buttons
