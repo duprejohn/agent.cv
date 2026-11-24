@@ -20,4 +20,8 @@ One honest sentence, then what you did with the time, then why you're ready now.
 
 ## "What are your salary expectations?"
 
+## "Aren't you overqualified?" / "Why a role at this level?"
+Say why the work itself draws you (hands-on again, a new domain, the mission), not that you'll take what you can get.
+
 ## Questions to ask them
+- "What do you want more of from the people in this role?" (Note the answer; it often repeats across a loop.)

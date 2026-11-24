@@ -1,13 +1,13 @@
 # agent.cv
 
-*A job search agency with one client (you). Runs on Claude. Configured and tested with Claude Opus 5.5.*
+*Your CV's agent: a job search agency with one client (you), run on Claude. Built and tested with Claude Opus 5.5.*
 
 This folder turns Claude into your own recruiter and account team. It
 sources roles, screens them honestly, tailors ATS-safe resumes and cover letters, preps you for interviews, and keeps
 every lead on a pipeline and dashboard. You make every decision and press every Submit button.
 
-This started as my personal setup during my 2026 job search and grew into a system over several months of
-real use. This is the same system with all personal data and context removed, shared for other job seekers to try.
+It started as John DuPre's personal setup during his own 2026 job search and grew into a system over a few months of
+real use. This is that system with the personal data taken out, shared so other job seekers can skip the trial and error.
 
 > Built with Claude. Not affiliated with or endorsed by Anthropic.
 
@@ -39,6 +39,7 @@ real use. This is the same system with all personal data and context removed, sh
 | `scripts/tailor.py <spec.json>` | Builds a tailored resume (.md, .docx, .pdf) from your master resume and a small JSON spec: headline, summary, skills, bullet order, truthful keyword swaps. Also writes a changelog (Before / After / Reasoning) so you can review every change before you send it |
 | `scripts/build_docx.py <file.md>` | ATS-friendly Word file: single column, real bullets, no tables or text boxes |
 | `scripts/make_pdf.py <file.md>` | Matching PDF on Mac, Windows or Linux |
+| `scripts/doc_pdf.py <file.md>` | Readable PDF of a prep sheet or study guide (tables, lists, quotes) on Mac, Windows or Linux |
 | `scripts/workday_resume.py <spec.json>` | A Workday-friendly variant (one block per position, no tagline) plus a paste sheet for fixing autofill by hand |
 | `scripts/sweep.py` | Scans public Greenhouse, Lever, Ashby and Workday job boards (`companies/ats-boards.json`) for new matching roles |
 | `scripts/do_not_submit.py` | A recruiter-ready list of roles you've already applied to, so agencies don't double-submit you |

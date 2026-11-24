@@ -67,6 +67,9 @@ one stopped. Go one phase at a time, and get the user's OK before moving on.
   went badly. Rate fit honestly.
 - **Every claim comes from the profile.** Tailored materials only reword or reorder real experience from `profile/`.
   If something is missing, ask the user. Never invent a metric, title, degree, tool or date.
+- **When a fact is corrected, fix it everywhere.** If the user corrects a claim (a metric's meaning, a feature that never
+  shipped, a date), update the profile and master resume, rebuild every unsent kit, and update open prep sheets. Then
+  list any materials already sent with the old wording, so the user can correct it in the room if it comes up.
 - **Keep the record current.** After any change, update `pipeline.csv` and add a line to `log.md` (newest first).
 - **Save the user's standing rules in `profile/house-rules.md`**, never in this file. When the user sets a lasting
   preference ("never list X", "always do Y"), add it there with the date, so every future session follows it and
@@ -120,8 +123,9 @@ one stopped. Go one phase at a time, and get the user's OK before moving on.
   tagline as a job title, and cuts titles at commas. For Workday (and UKG) also run
   `python3 scripts/workday_resume.py <spec.json>` → `resume-workday.pdf/.docx` (one block per position, no tagline,
   auto-fit to 2 pages) and `experience-paste.txt` (one clean block per job). For "Autofill with Resume", upload the
-  **.docx**: from a PDF, every visual line wrap becomes a hard return. Autofill is unreliable, so review every entry;
-  `experience-paste.txt` is the dependable route.
+  **.docx**: from a PDF, every visual line wrap becomes a hard return. Autofill often fails outright, so plan to enter
+  each job by hand from `experience-paste.txt` (one paragraph per job) and review every entry. Workday's parsing
+  rules are still only partly understood; log what each Workday portal does with the upload in `log.md`.
 - **SmartRecruiters:** new experience entries go to the TOP, so add roles oldest first; avoid semicolons in descriptions.
 - **Taleo:** resume parse is step 1; strict phone formats; often asks for 7 years of employment including gaps; Move
   Up/Down links shift after reloads, so find them by label.
@@ -155,6 +159,31 @@ front (Mon agencies, Tue contract/consulting, Wed LinkedIn, Thu network, Fri rev
 ## Interviews
 - Prep sheet before each stage in `interviews/<company>-<stage>-<date>.md`; debrief after, listing every question asked.
 - Every prep sheet includes tailored **Superpower** and **Growth edge** answers (base versions in `interviews/answer-bank.md`).
+- **Prep sheet shape:** what this interviewer is really testing, a 60-second opener, the **top 2 answers written out**
+  (the ones to have cold), likely questions mapped to real stories, 3–4 questions to ask, a "watch" list (claims to avoid
+  or correct), the key numbers, and an empty debrief section. Keep it to about 2 pages. PDF it with
+  `python3 scripts/doc_pdf.py <file.md>` so the user can read it away from the screen.
+- **Multi-round loops (onsites, panels):** one sheet per interviewer, named for the person and function (e.g.
+  `<company>-<name>-eng-<date>.md`). Tailor each to that person's discipline. Carry forward what earlier rounds revealed.
+- **Debrief right after every round, even a short one.** Capture what they asked, what they said they need
+  ("what do you want more of from PMs?" is a great question to ask), and anything new the user said that isn't in the
+  profile yet (flag it; confirm before reusing). Update the next sheet with it. If a theme repeats across rounds
+  (e.g. "the team is short-staffed"), point it out: it's what the user should be selling.
+- **Live case interviews** (no prompt in advance): give the user a clock for the session (clarify → structure → work
+  the problem → risks and metrics → questions) and one "spine" to say out loud: users → problem in numbers → options →
+  pick one and why → smallest first release → success and guardrail metrics. If the interviewer redirects, follow it out
+  loud; taking direction well is part of the test. If the user felt unstructured afterward, the thank-you note can
+  restate the approach in three lines, and the next round's sheets should include the structured version.
+- **Before a leadership or founder call:** check the company's own site for what it actually ships (e.g. whether it has
+  any AI features) and what one or two competitors are launching. Turn gaps into questions, not criticism.
+- **If the employer isn't sure it needs the role full time,** the user can offer a short contract engagement instead
+  (e.g. 90 days to set up the foundations, then a recommendation). Float it only on clear signals; leading with it
+  can read as less committed. Rates come from the user's consulting notes in `profile/`.
+- **Thank-you notes:** draft one per interviewer, specific to something they said. If the user doesn't have their
+  emails, write one team note naming each person's topic and ask the recruiter to forward it.
+- **Audio briefing (optional):** on request, write a prompt for NotebookLM's Audio Overview (or a similar tool) to turn
+  the prep sheets into a ~15-minute briefing the user can listen to on a walk: big picture, each session, the case
+  structure, honesty guardrails, and a steadying close. List which PDFs to upload. Save it next to the sheets.
 - Mock interviews: Claude asks one question at a time, waits, then gives honest feedback.
 - If an employer sets a take-home or timed exercise and says not to use AI, Claude helps with general prep only,
   never with the exercise itself.
@@ -184,7 +213,7 @@ profile, house rules, pipeline, applications, plans and logs are never touched.
 
 ## Platform notes (Mac, Windows, Linux)
 - **Python:** the commands say `python3`. On Windows use `py` (or `python`) instead. Python 3.9+; no packages needed.
-- **PDFs** (`scripts/make_pdf.py`, also used by tailor, workday_resume and do_not_submit):
+- **PDFs** (`scripts/make_pdf.py`, also used by tailor, workday_resume, do_not_submit and doc_pdf):
   - **Mac:** built in (Swift + macOS text system). Nothing to install.
   - **Windows:** uses headless Microsoft Edge, which ships with Windows 10/11. Chrome works too.
   - **Linux:** install Chromium or Google Chrome (`sudo apt install chromium` / `sudo dnf install chromium`), or
