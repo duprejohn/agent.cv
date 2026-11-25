@@ -19,7 +19,7 @@ import fnmatch, hashlib, io, json, pathlib, re, shutil, sys, tempfile, urllib.re
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 MANIFEST = ROOT / "scripts" / "manifest.json"
-PROJECT_FILES = ["CLAUDE.md", "README.md", "LICENSE", "STARTER-PROMPT.md", ".gitignore", "VERSION", "CHANGELOG.md",
+PROJECT_FILES = ["AGENTS.md", "CLAUDE.md", "README.md", "LICENSE", "STARTER-PROMPT.md", ".gitignore", "VERSION", "CHANGELOG.md",
                  "scripts/*.py", "scripts/*.swift", "scripts/manifest.json", "dashboard/*.html", "dashboard/app.css",
                  "dashboard/app.js", "companies/agencies.md", "outreach/recruiter-templates.md"]
 

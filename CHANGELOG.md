@@ -6,6 +6,21 @@ Each release lists what changed and any steps for existing users. To update your
 "Steps for existing users" (data changes Claude should make, like adding a column to pipeline.csv).
 Before publishing: bump `VERSION`, add the entry here, run `python3 scripts/update.py manifest`, then push.
 
+## 0.9.3 (2026-11-25)
+### What's new
+- **One operating manual for any agent: `AGENTS.md`.** The manual moved from CLAUDE.md to AGENTS.md, the file OpenAI
+  Codex and other agents read on their own. `CLAUDE.md` is now a short pointer, so Claude (Cowork and Claude Code) works
+  exactly as before. The manual says "the agent" instead of "Claude"; the safety rules are unchanged.
+- **Experimental: runs on OpenAI Codex.** See "Using OpenAI Codex instead" in the README. Claude stays the recommended,
+  tested setup; please report how Codex goes in GitHub Issues.
+- The starter prompt now says "Read AGENTS.md". The old prompt still works through the pointer.
+- README fix: standing rules go in `profile/house-rules.md` (it said CLAUDE.md).
+
+### Steps for existing users
+- **Run the update twice.** Your current updater doesn't know about AGENTS.md yet, so the first pass installs the new
+  updater and the short CLAUDE.md; the second pass (`python3 scripts/update.py apply`) adds AGENTS.md. Then confirm
+  AGENTS.md exists and read it before doing anything else.
+
 ## 0.9.2 (2026-11-24)
 ### What's new
 - **`profile/master-resume.md` is now `profile/primary-resume.md`.** The docs already called it your primary resume;

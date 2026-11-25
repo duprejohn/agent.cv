@@ -9,7 +9,7 @@
    unzip it. In Cowork, choose the `agentcv` folder to work in.
 3. **Paste this prompt into Claude:**
 
-> You're my job search agency, and I'm your only client. Read CLAUDE.md in this folder: it's your operating manual. This is our first session, so start setup at Phase 1. Read my LinkedIn PDF and resume in profile/materials/, then interview me a few questions at a time. Coach me to a strong primary resume, help me update LinkedIn to match it, and then ask me what jobs and industries I want to target. Don't send, submit or post anything without my explicit OK.
+> You're my job search agency, and I'm your only client. Read AGENTS.md in this folder: it's your operating manual. This is our first session, so start setup at Phase 1. Read my LinkedIn PDF and resume in profile/materials/, then interview me a few questions at a time. Coach me to a strong primary resume, help me update LinkedIn to match it, and then ask me what jobs and industries I want to target. Don't send, submit or post anything without my explicit OK.
 
 That's it. Claude takes it from there. *Tip:* save your LinkedIn profile as a PDF (**More → Save to PDF**) into the
 folder's `profile/materials/` first. Need more detail? See the [full setup guide](#full-setup-guide).
@@ -21,11 +21,11 @@ every lead on a pipeline and dashboard. You make every decision and press every 
 It started as John DuPre's personal setup during his own 2026 job search and grew into a system over a few months of
 real use. This is that system with the personal data taken out, shared so other job seekers can skip the trial and error.
 
-> Built with Claude. Not affiliated with or endorsed by Anthropic.
+> Built with and for Claude; also runs on OpenAI Codex (experimental). Not affiliated with or endorsed by Anthropic or OpenAI.
 
 ## How it works
-- **`CLAUDE.md` is the operating manual.** Claude reads it at the start of every session. It defines the roles Claude
-  plays (intake recruiter, sourcer, account manager, resume writer, interview coach, negotiator) and the house rules.
+- **`AGENTS.md` is the operating manual.** Your AI agent reads it at the start of every session (`CLAUDE.md` points Claude
+  to it). It defines the roles the agent plays (intake recruiter, sourcer, account manager, resume writer, interview coach, negotiator) and the house rules.
 - **The house rules keep it honest:**
   - Nothing goes out without your explicit approval.
   - Every resume claim comes from your profile. Claude rewords and reorders, and never invents.
@@ -84,12 +84,12 @@ the current version.
    and select your `agentcv` folder.
 2. When Claude asks for access, allow it for **this folder only**. Don't give it your whole home folder or anything
    with financial documents.
-3. Claude reads `CLAUDE.md`, the agency's operating manual, from the folder.
+3. Claude reads `AGENTS.md`, the agency's operating manual, from the folder.
 
 ### 4. Paste the starter prompt
 Copy this into Cowork and send it (it's also in [`STARTER-PROMPT.md`](STARTER-PROMPT.md)):
 
-> You're my job search agency, and I'm your only client. Read CLAUDE.md in this folder: it's your operating manual. This is our first session, so start setup at Phase 1. Read my LinkedIn PDF and resume in profile/materials/, then interview me a few questions at a time. Coach me to a strong primary resume, help me update LinkedIn to match it, and then ask me what jobs and industries I want to target. Don't send, submit or post anything without my explicit OK.
+> You're my job search agency, and I'm your only client. Read AGENTS.md in this folder: it's your operating manual. This is our first session, so start setup at Phase 1. Read my LinkedIn PDF and resume in profile/materials/, then interview me a few questions at a time. Coach me to a strong primary resume, help me update LinkedIn to match it, and then ask me what jobs and industries I want to target. Don't send, submit or post anything without my explicit OK.
 
 Setup runs in four phases over one to three sessions:
 1. **Intake:** Claude reads your LinkedIn and resume, then asks about the gaps (numbers, scope, team size).
@@ -104,6 +104,11 @@ while Claude is working with your files. Claude will ask before it runs anything
 
 **Prefer the terminal?** [Claude Code](https://claude.com/claude-code) works too: open a terminal in the `agentcv`
 folder, run `claude`, and paste the same starter prompt.
+
+**Using OpenAI Codex instead (experimental).** agentCV also runs in [Codex](https://openai.com/codex), OpenAI's coding
+agent, which reads `AGENTS.md` on its own. Open the `agentcv` folder in Codex and paste the same starter prompt. Allow it
+to run the Python scripts in `scripts/` and, for job sweeps and updates, to reach the internet. Codex support is new and
+less tested than Claude; please report what works and what doesn't in GitHub Issues.
 
 ## Requirements
 - **Claude** with access to a local folder: Cowork in the Claude desktop app (paid plans), or Claude Code. Tailoring
@@ -123,7 +128,7 @@ folder, run `claude`, and paste the same starter prompt.
   and how many recent employers to show in full on a resume.
 - **`companies/ats-boards.json`** starts empty. After asking what you're looking for, Claude finds the public job boards
   for your target employers and adds them, so the sweep only scans companies you care about.
-- **Standing rules:** when you tell Claude "always do X" or "never say Y", it saves the rule in `CLAUDE.md`, so every
+- **Standing rules:** when you tell Claude "always do X" or "never say Y", it saves the rule in `profile/house-rules.md`, so every
   future session follows it.
 
 ## Getting updates
@@ -148,7 +153,8 @@ resumes, PDFs and dashboard data, but your profile and pipeline files are still 
 
 ## Folder map
 ```
-CLAUDE.md               operating manual (Claude reads this first)
+AGENTS.md               operating manual (your agent reads this first)
+CLAUDE.md               points Claude to AGENTS.md
 STARTER-PROMPT.md       paste this into your first session
 profile/                who you are: profile, targets, primary resume, form answers, config
 pipeline.csv            every opportunity and its stage

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Write dashboard/data.js from pipeline.csv, outreach.csv, agencies.csv and plan/next-actions.json.
 The pages (dashboard.html overview, dashboard/roles.html, dashboard/network.html) and dashboard/app.js + app.css are static;
-run this after any change, then republish the artifact with its files (see CLAUDE.md)."""
+run this after any change, then republish the artifact with its files (see AGENTS.md)."""
 import csv, json, re, datetime, pathlib, sys
 root = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(root / "scripts"))

@@ -1,5 +1,5 @@
 # House rules
-Your standing instructions to your agency. Claude reads this at the start of every session and follows it over CLAUDE.md
+Your standing instructions to your agency. Your agent reads this at the start of every session and follows it over AGENTS.md
 (except the safety rules). When you tell Claude "always…" or "never…", it adds the rule here with the date.
 This file is yours: agentCV updates never touch it.
 

@@ -4,7 +4,7 @@
 Usage: python3 scripts/doc_pdf.py <file.md> [more.md ...]  -> writes <file>.pdf next to each source
 make_pdf.py is tuned for resumes and cover letters (one line per paragraph, no tables). Use this one for
 interview prep sheets, study guides and other working docs. Uses the same renderer as make_pdf.py
-(Mac: built in; Windows/Linux: headless Edge/Chrome/Chromium; see Platform notes in CLAUDE.md).
+(Mac: built in; Windows/Linux: headless Edge/Chrome/Chromium; see Platform notes in AGENTS.md).
 """
 import html, pathlib, re, sys, tempfile
 
