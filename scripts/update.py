@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Update this copy of agent.cv from the project's GitHub repo, without touching the user's own files.
+"""Update this copy of agentCV from the project's GitHub repo, without touching the user's own files.
 
 Usage:
   python3 scripts/update.py check              what's new upstream (version + changelog entries), changes nothing
@@ -51,7 +51,7 @@ def fetch_upstream(source=None):
     else:
         m = load_manifest(ROOT)
         if not m.get("repo") or "YOUR-GITHUB-USERNAME" in m["repo"]:
-            sys.exit("No upstream repo set. Put \"repo\": \"<owner>/agent.cv\" in scripts/manifest.json.")
+            sys.exit("No upstream repo set. Put \"repo\": \"<owner>/agentcv\" in scripts/manifest.json.")
         url = f"https://codeload.github.com/{m['repo']}/zip/refs/heads/{m.get('branch', 'main')}"
         with urllib.request.urlopen(url, timeout=60) as r:
             data = r.read()
@@ -95,7 +95,7 @@ def make_plan(up):
 
 
 def show(plan, up):
-    print(f"agent.cv {plan['from']} → {plan['to']}")
+    print(f"agentCV {plan['from']} → {plan['to']}")
     notes = changelog_since((up / "CHANGELOG.md").read_text(encoding="utf-8"), plan["from"]) if (up / "CHANGELOG.md").exists() else []
     for n in notes:
         print("\n" + n)
@@ -145,7 +145,7 @@ def build_manifest():
         rel = p.relative_to(ROOT).as_posix()
         if p.is_file() and rel != "scripts/manifest.json" and is_project_file(rel) and not rel.startswith("backups/"):
             files[rel] = sha(p)
-    m = {"version": version, "repo": old.get("repo", "duprejohn/agent.cv"), "branch": old.get("branch", "main"), "files": files}
+    m = {"version": version, "repo": old.get("repo", "duprejohn/agentcv"), "branch": old.get("branch", "main"), "files": files}
     MANIFEST.write_text(json.dumps(m, indent=1) + "\n", encoding="utf-8")
     print(f"manifest.json: version {version}, {len(files)} project files")
 
@@ -160,7 +160,7 @@ if __name__ == "__main__":
         up = fetch_upstream(source)
         plan, remote = make_plan(up)
         if vkey(plan["to"]) <= vkey(plan["from"]) and not (plan["new"] or plan["update"]):
-            print(f"agent.cv is up to date ({plan['from']}).")
+            print(f"agentCV is up to date ({plan['from']}).")
         elif cmd == "check":
             print(f"Update available: {plan['from']} → {plan['to']}\n")
             for n in changelog_since((up / "CHANGELOG.md").read_text(encoding="utf-8"), plan["from"]) if (up / "CHANGELOG.md").exists() else []:

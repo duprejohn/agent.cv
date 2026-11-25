@@ -1,6 +1,6 @@
 # Changelog
 Each release lists what changed and any steps for existing users. To update your copy, tell Claude
-"update agent.cv" (it runs `python3 scripts/update.py` and walks you through it).
+"update agentCV" (it runs `python3 scripts/update.py` and walks you through it).
 
 **Format (maintainers):** newest first, headed `## <version> (<YYYY-MM-DD>)`, with "What's new" and, when needed,
 "Steps for existing users" (data changes Claude should make, like adding a column to pipeline.csv).
@@ -11,7 +11,10 @@ Before publishing: bump `VERSION`, add the entry here, run `python3 scripts/upda
 - **`profile/master-resume.md` is now `profile/primary-resume.md`.** The docs already called it your primary resume;
   now the file name matches. Scripts and the dashboard look for the new name and still find the old one, so nothing
   breaks if you haven't renamed yet.
-- Release downloads are versioned: `agent.cv-<version>.zip` on each GitHub release.
+- **agent.cv is now agentCV.** Apps kept turning "agent.cv" into a link to a website that isn't ours. The repo is
+  now github.com/duprejohn/agentcv (old links redirect), downloads are `agentcv-<version>.zip`, and they unzip to an
+  `agentcv` folder. Your existing `agent.cv` folder keeps working; rename it only if you want to.
+- Release downloads are versioned: `agentcv-<version>.zip` on each GitHub release.
 
 ### Steps for existing users
 - Ask Claude to rename `profile/master-resume.md` (and any `.docx`/`.pdf` built from it) to `primary-resume.*`, and to

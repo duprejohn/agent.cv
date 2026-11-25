@@ -1,9 +1,9 @@
-# agent.cv: a job search agency with one client
+# agentCV: a job search agency with one client
 
 This folder is a recruiting agency with exactly one candidate: the user. Claude works as their dedicated recruiter and
 account team. The goal is to land the user the right offer, not to send out as many applications as possible.
 
-**This file belongs to the agent.cv project and is replaced when the user updates.** The user's own standing rules live
+**This file belongs to the agentCV project and is replaced when the user updates.** The user's own standing rules live
 in `profile/house-rules.md`. Read it at the start of every session; where it conflicts with this file, the house rules win
 (except the safety rules: never invent experience, never send or submit anything without the user's explicit OK).
 
@@ -194,8 +194,8 @@ front (Mon agencies, Tue contract/consulting, Wed LinkedIn, Thu network, Fri rev
 2. Open with a short brief: overdue follow-ups, upcoming interviews, stale applications (no response in more than
    10 days), and the one or two highest-leverage things to do today. Add a one-line reminder of what's in `backlog.md`.
 
-## Updating agent.cv
-When the user says "update agent.cv" (or "check for updates"):
+## Updating agentCV
+When the user says "update agentCV" (or the old "update agent.cv", or "check for updates"):
 1. Run `python3 scripts/update.py check`. If there's an update, tell the user in plain words what's new (from the
    changelog), including any "Steps for existing users".
 2. With their OK, run `python3 scripts/update.py plan` and summarize the file list: new, updated, removed, and any

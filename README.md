@@ -1,4 +1,4 @@
-# agent.cv
+# agentCV
 
 *Your CV's agent: a job search agency with one client (you), run on Claude. Built and tested with Claude Opus 5.5.*
 
@@ -71,17 +71,17 @@ The app's layout changes from time to time. If a step doesn't match what you see
 [Get started with Cowork](https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork) guide has
 the current version.
 
-### 2. Get your copy of agent.cv
+### 2. Get your copy of agentCV
 1. **[Download agent.cv 0.9.1 (zip)](https://github.com/duprejohn/agent.cv/releases/download/v0.9.1/agent.cv-0.9.1.zip)**: the
    current release. Unzip it; you get an `agent.cv` folder.
-2. Put the `agent.cv` folder somewhere private, like your Documents folder. (Updates come through Claude later, so you
+2. Put the `agentcv` folder somewhere private, like your Documents folder. (Updates come through Claude later, so you
    only download once.)
 3. **Add your LinkedIn profile:** on your LinkedIn profile page, click **More → Save to PDF**. Put that PDF, and any
-   current resume, in `agent.cv/profile/materials/`.
+   current resume, in `agentcv/profile/materials/`.
 
 ### 3. Point Cowork at the folder
 1. In Cowork, start a new task and choose a folder to work in. Pick **Use an existing folder** (the wording may vary)
-   and select your `agent.cv` folder.
+   and select your `agentcv` folder.
 2. When Claude asks for access, allow it for **this folder only**. Don't give it your whole home folder or anything
    with financial documents.
 3. Claude reads `CLAUDE.md`, the agency's operating manual, from the folder.
@@ -102,7 +102,7 @@ Setup runs in four phases over one to three sessions:
 Open the same folder in Cowork and say **"start my morning."** Say **"done for today"** at the end. Keep the app open
 while Claude is working with your files. Claude will ask before it runs anything new; approve what you're comfortable with.
 
-**Prefer the terminal?** [Claude Code](https://claude.com/claude-code) works too: open a terminal in the `agent.cv`
+**Prefer the terminal?** [Claude Code](https://claude.com/claude-code) works too: open a terminal in the `agentcv`
 folder, run `claude`, and paste the same starter prompt.
 
 ## Requirements
@@ -127,7 +127,7 @@ folder, run `claude`, and paste the same starter prompt.
   future session follows it.
 
 ## Getting updates
-agent.cv improves over time. To get the latest version, tell Claude **"update agent.cv."** Claude will:
+agentCV improves over time. To get the latest version, tell Claude **"update agentCV."** Claude will:
 1. Check this repo for a newer version and explain what changed (see [`CHANGELOG.md`](CHANGELOG.md)).
 2. Show you exactly which files would change, and wait for your OK.
 3. Replace only the project's own files: scripts, dashboard pages, templates and this manual. Your profile, resumes,
@@ -138,7 +138,7 @@ Your own rules ("always…", "never…") live in `profile/house-rules.md`, so up
 
 **For maintainers:** bump `VERSION`, add a `CHANGELOG.md` entry (with "Steps for existing users" if data changes), run
 `python3 scripts/update.py manifest`, then push and publish a GitHub release tagged `v<version>` with the changelog
-entry as its notes. Attach `agent.cv-<version>.zip` (`git archive --format=zip --prefix=agent.cv/ -o agent.cv-<version>.zip HEAD`),
+entry as its notes. Attach `agentcv-<version>.zip` (`git archive --format=zip --prefix=agentcv/ -o agentcv-<version>.zip HEAD`),
 then update both README download links (Quick start and Full setup guide) to the new tag and file name.
 
 ## Privacy
