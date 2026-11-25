@@ -5,8 +5,8 @@
 ## Quick start
 1. **Install Claude.** Get the [Claude desktop app](https://claude.com/download) (needs a paid plan), sign in, and
    switch to **Cowork**.
-2. **[Download agent.cv 0.9.1 (zip)](https://github.com/duprejohn/agent.cv/releases/download/v0.9.1/agent.cv-0.9.1.zip)** and
-   unzip it. In Cowork, choose the `agent.cv` folder to work in.
+2. **[Download agentCV 0.9.2 (zip)](https://github.com/duprejohn/agentcv/releases/download/v0.9.2/agentcv-0.9.2.zip)** and
+   unzip it. In Cowork, choose the `agentcv` folder to work in.
 3. **Paste this prompt into Claude:**
 
 > You're my job search agency, and I'm your only client. Read CLAUDE.md in this folder: it's your operating manual. This is our first session, so start setup at Phase 1. Read my LinkedIn PDF and resume in profile/materials/, then interview me a few questions at a time. Coach me to a strong primary resume, help me update LinkedIn to match it, and then ask me what jobs and industries I want to target. Don't send, submit or post anything without my explicit OK.
@@ -72,8 +72,8 @@ The app's layout changes from time to time. If a step doesn't match what you see
 the current version.
 
 ### 2. Get your copy of agentCV
-1. **[Download agent.cv 0.9.1 (zip)](https://github.com/duprejohn/agent.cv/releases/download/v0.9.1/agent.cv-0.9.1.zip)**: the
-   current release. Unzip it; you get an `agent.cv` folder.
+1. **[Download agentCV 0.9.2 (zip)](https://github.com/duprejohn/agentcv/releases/download/v0.9.2/agentcv-0.9.2.zip)**: the
+   current release. Unzip it; you get an `agentcv` folder.
 2. Put the `agentcv` folder somewhere private, like your Documents folder. (Updates come through Claude later, so you
    only download once.)
 3. **Add your LinkedIn profile:** on your LinkedIn profile page, click **More → Save to PDF**. Put that PDF, and any
