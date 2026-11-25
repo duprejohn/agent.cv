@@ -5,7 +5,7 @@
 ## Quick start
 1. **Install Claude.** Get the [Claude desktop app](https://claude.com/download) (needs a paid plan), sign in, and
    switch to **Cowork**.
-2. **[Download agentCV 0.9.2 (zip)](https://github.com/duprejohn/agentcv/releases/download/v0.9.2/agentcv-0.9.2.zip)** and
+2. **[Download agentCV 0.9.3 (zip)](https://github.com/duprejohn/agentcv/releases/download/v0.9.3/agentcv-0.9.3.zip)** and
    unzip it. In Cowork, choose the `agentcv` folder to work in.
 3. **Paste this prompt into Claude:**
 
@@ -72,7 +72,7 @@ The app's layout changes from time to time. If a step doesn't match what you see
 the current version.
 
 ### 2. Get your copy of agentCV
-1. **[Download agentCV 0.9.2 (zip)](https://github.com/duprejohn/agentcv/releases/download/v0.9.2/agentcv-0.9.2.zip)**: the
+1. **[Download agentCV 0.9.3 (zip)](https://github.com/duprejohn/agentcv/releases/download/v0.9.3/agentcv-0.9.3.zip)**: the
    current release. Unzip it; you get an `agentcv` folder.
 2. Put the `agentcv` folder somewhere private, like your Documents folder. (Updates come through Claude later, so you
    only download once.)
